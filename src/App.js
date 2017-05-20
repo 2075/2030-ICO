@@ -82,13 +82,13 @@ class App extends Component {
 			<div className='App'>
 
 {
-				// <div className='RenderPolygons'>
-				// 	<RenderPolygons
-				// 		width={stageWidth}
-				// 		height={stageHeight}
-				// 		inverted
-				// 		/>
-				// </div>
+				<div className='RenderPolygons'>
+					<RenderPolygons
+						width={stageWidth}
+						height={stageHeight}
+						inverted
+						/>
+				</div>
 }
 				<Container>
 
