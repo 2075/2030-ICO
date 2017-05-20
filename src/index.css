@@ -1,12 +1,20 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('//fonts.googleapis.com/css?family=Raleway');
 
 html, body {
-  background: #000000 url('/grid.png') repeat !important;
+  background: #000000 url('/img/grid.png') repeat !important;
   background-size: 25% !important;
   background-attachment: scroll;
 
 	color: #eeeeee;
 	font-weight: 200;
+}
+
+a {
+	color: #ffffff !important;
+}
+
+a:hover {
+	text-decoration: underline;
 }
 
 .inverted {
@@ -18,7 +26,13 @@ html, body {
 }
 
 .landing-bottom {
-  background-image: url('/atmosphere-at-sunrise.jpg');
+  background: url('/img/horizon.jpg') !important;
+  height: 500px;
+  z-index: -10;
+}
+
+.bottom-navigation {
+	background: #000000 !important;
 }
 
 .RenderPolygons {

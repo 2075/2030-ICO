@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import Zest from 'react-zest';
 
+import sr from './components/ScrollReveal'
+
+// semantic ui components
 import {
 	Menu,
 	Container,
@@ -14,11 +16,15 @@ import {
 	Icon,
 	Statistic,
 	Accordion,
+	List,
 	Card
 } from 'semantic-ui-react'
 
+// threejs eyecandy
 import RenderPolygons from './components/Polygons'
 
+// content for the bottom stats display
+//
 const items = [
 	{ color: 'blue', label: 'Downloads', value: '3,200' },
 	{ color: 'violet', label: 'Likes', value: '10,000' },
@@ -44,6 +50,25 @@ class App extends Component {
 	componentDidMount() {
 		this.updateWindowDimensions()
 		window.addEventListener('resize', this.updateWindowDimensions)
+
+		const sr_config = {
+			origin: 'bottom',
+			duration: 1000,
+			delay: 250,
+			distance: '100px',
+			scale: 1,
+			easing: 'ease',
+		}
+
+		sr.reveal( this.refs.box0, sr_config )
+		sr.reveal( this.refs.box1, sr_config )
+		sr.reveal( this.refs.box2, sr_config )
+		sr.reveal( this.refs.box3, sr_config )
+		sr.reveal( this.refs.box4, sr_config )
+		sr.reveal( this.refs.box5, sr_config )
+		sr.reveal( this.refs.box6, sr_config )
+		sr.reveal( this.refs.box7, sr_config )
+		sr.reveal( this.refs.box8, sr_config )
 	}
 
 	componentWillUnmount() {
@@ -81,7 +106,6 @@ class App extends Component {
 
 			<div className='App'>
 
-{
 				<div className='RenderPolygons'>
 					<RenderPolygons
 						width={stageWidth}
@@ -89,7 +113,7 @@ class App extends Component {
 						inverted
 						/>
 				</div>
-}
+
 				<Container>
 
 					<Menu pointing inverted secondary>
@@ -118,241 +142,346 @@ class App extends Component {
 						</Message>
 					}
 
-					<Segment className='landing-top' inverted>
+					<Segment ref='box0' className='landing-top' inverted>
 
-						<Image src='/main-logo.png' size='large' centered />
+						<Image src='/img/main-logo.png' size='large' centered />
 
-						<Image src='/header-1.png' centered />
+						<Image src='/img/header-1.png' centered />
 
-						<Image src='/timer.png' centered />
+						<Image src='/img/timer.png' centered />
 
-						<Image src='/header-2.png' centered />
+						<Image src='/img/header-2.png' centered />
 
 					</Segment>
 
-			        <Divider horizontal inverted>What we do</Divider>
+					<div ref= 'box1'>
+						<Divider horizontal inverted>What we do</Divider>
 
-					<Segment className='landing-top' inverted>
+						<Segment inverted>
+
+							<Grid stackable divided='vertically'>
+								<Grid.Row columns={2}>
+									<Grid.Column>
+										<Image src='/img/paragraph.png' />
+									</Grid.Column>
+									<Grid.Column>
+										<Image src='/img/paragraph.png' />
+									</Grid.Column>
+								</Grid.Row>
+
+								<Grid.Row columns={3}>
+									<Grid.Column>
+										<Image src='/img/paragraph.png' />
+									</Grid.Column>
+									<Grid.Column>
+										<Image src='/img/paragraph.png' />
+									</Grid.Column>
+									<Grid.Column>
+										<Image src='/img/paragraph.png' />
+									</Grid.Column>
+								</Grid.Row>
+							</Grid>
+
+						</Segment>
+					</div>
+
+					<div  ref='box2'>
+						<Divider horizontal inverted>Products + Roadmap</Divider>
+
+						<Segment inverted>
+
+							<Grid celled >
+								<Grid.Row columns={4}>
+									<Grid.Column>
+										<Image src='/img/paragraph.png' />
+									</Grid.Column>
+									<Grid.Column>
+										<Image src='/img/paragraph.png' />
+									</Grid.Column>
+									<Grid.Column>
+										<Image src='/img/paragraph.png' />
+									</Grid.Column>
+									<Grid.Column>
+										<Image src='/img/paragraph.png' />
+									</Grid.Column>
+								</Grid.Row>
+								<Grid.Row columns={4}>
+									<Grid.Column>
+										<Image src='/img/paragraph.png' />
+									</Grid.Column>
+									<Grid.Column>
+										<Image src='/img/paragraph.png' />
+									</Grid.Column>
+									<Grid.Column>
+										<Image src='/img/paragraph.png' />
+									</Grid.Column>
+									<Grid.Column>
+										<Image src='/img/paragraph.png' />
+									</Grid.Column>
+								</Grid.Row>
+							</Grid>
+
+						</Segment>
+					</div>
+
+
+					<div ref='box3'>
+				        <Divider horizontal inverted>Partners</Divider>
+
+						<Segment inverted>
+							<Header as='h2' icon textAlign='center'>
+								<Icon name='users' circular />
+								<Header.Content>
+									Friends
+								</Header.Content>
+							</Header>
+							<Image centered size='large' src='/img/centered-paragraph.png' />
+						</Segment>
+					</div>
+
+					<div ref='box4'>
+				        <Divider horizontal inverted>Core Team</Divider>
+
+						<Segment inverted>
+
+							<Card.Group itemsPerRow={4}>
+								<Card>
+									<Card.Content>
+										<Card.Header>Matthew Harris</Card.Header>
+										<Card.Meta>Co-Worker</Card.Meta>
+										<Card.Description>Matthew is a pianist living in Nashville.</Card.Description>
+									</Card.Content>
+								</Card>
+
+								<Card>
+									<Card.Content>
+										<Card.Header content='Jake Smith' />
+										<Card.Meta content='Musicians' />
+										<Card.Description content='Jake is a drummer living in New York.' />
+									</Card.Content>
+								</Card>
+
+								<Card>
+									<Card.Content
+										header='Elliot Baker'
+										meta='Friend'
+										description='Elliot is a music producer living in Chicago.'
+										/>
+								</Card>
+
+								<Card
+									header='Jenny Hess'
+									meta='Friend'
+									description='Jenny is a student studying Media Management at the New School'
+									/>
+								<Card>
+									<Card.Content>
+										<Card.Header>Matthew Harris</Card.Header>
+										<Card.Meta>Co-Worker</Card.Meta>
+										<Card.Description>Matthew is a pianist living in Nashville.</Card.Description>
+									</Card.Content>
+								</Card>
+
+								<Card>
+									<Card.Content>
+										<Card.Header content='Jake Smith' />
+										<Card.Meta content='Musicians' />
+										<Card.Description content='Jake is a drummer living in New York.' />
+									</Card.Content>
+								</Card>
+
+								<Card>
+									<Card.Content
+										header='Elliot Baker'
+										meta='Friend'
+										description='Elliot is a music producer living in Chicago.'
+										/>
+								</Card>
+
+								<Card
+									header='Jenny Hess'
+									meta='Friend'
+									description='Jenny is a student studying Media Management at the New School'
+									/>
+							</Card.Group>
+
+						</Segment>
+					</div>
+
+					<div ref='box5'>
+				        <Divider horizontal inverted>Ambassadors & Associates</Divider>
+
+						<Segment inverted>
+
+							<Card.Group stackable itemsPerRow={4}>
+								<Card>
+									<Card.Content>
+										<Card.Header>Matthew Harris</Card.Header>
+										<Card.Meta>Co-Worker</Card.Meta>
+										<Card.Description>Matthew is a pianist living in Nashville.</Card.Description>
+									</Card.Content>
+								</Card>
+
+								<Card>
+									<Card.Content>
+										<Card.Header content='Jake Smith' />
+										<Card.Meta content='Musicians' />
+										<Card.Description content='Jake is a drummer living in New York.' />
+									</Card.Content>
+								</Card>
+
+								<Card>
+									<Card.Content
+										header='Elliot Baker'
+										meta='Friend'
+										description='Elliot is a music producer living in Chicago.'
+										/>
+								</Card>
+
+								<Card
+									header='Jenny Hess'
+									meta='Friend'
+									description='Jenny is a student studying Media Management at the New School'
+									/>
+								<Card>
+									<Card.Content>
+										<Card.Header>Matthew Harris</Card.Header>
+										<Card.Meta>Co-Worker</Card.Meta>
+										<Card.Description>Matthew is a pianist living in Nashville.</Card.Description>
+									</Card.Content>
+								</Card>
+
+								<Card>
+									<Card.Content>
+										<Card.Header content='Jake Smith' />
+										<Card.Meta content='Musicians' />
+										<Card.Description content='Jake is a drummer living in New York.' />
+									</Card.Content>
+								</Card>
+
+								<Card>
+									<Card.Content
+										header='Elliot Baker'
+										meta='Friend'
+										description='Elliot is a music producer living in Chicago.'
+										/>
+								</Card>
+
+								<Card
+									header='Jenny Hess'
+									meta='Friend'
+									description='Jenny is a student studying Media Management at the New School'
+									/>
+							</Card.Group>
+
+						</Segment>
+
+					</div>
+
+					<div ref='box6'>
+				        <Divider horizontal inverted>Frequently asked Questions</Divider>
+
+						<Segment>
+							<Accordion>
+								<Accordion.Title>
+									<Icon name='dropdown' />
+									What is a dog?
+								</Accordion.Title>
+								<Accordion.Content>
+									<p>
+									A dog is a type of domesticated animal. Known for its loyalty and faithfulness,
+									{' '}it can be found as a welcome guest in many households across the world.
+									</p>
+								</Accordion.Content>
+								<Accordion.Title>
+									<Icon name='dropdown' />
+									What kinds of dogs are there?
+								</Accordion.Title>
+								<Accordion.Content>
+									<p>
+									There are many breeds of dogs. Each breed varies in size and temperament.
+									{' '}Owners often select a breed of dog that they find to be compatible
+									with their own lifestyle and desires from a companion.
+									</p>
+								</Accordion.Content>
+								<Accordion.Title>
+									<Icon name='dropdown' />
+									How do you acquire a dog?
+								</Accordion.Title>
+								<Accordion.Content>
+									<p>
+									Three common ways for a prospective owner to acquire a dog is from pet shops,
+									{' '}private owners, or shelters.
+									</p>
+									<p> A pet shop may be the most convenient way to buy a dog.
+									{' '}Buying a dog from a private owner allows you to assess the pedigree and
+									{' '}upbringing of your dog before choosing to take it home. Lastly, finding your dog
+									{' '}from a shelter, helps give a good home to a dog who may not find one so readily.
+									</p>
+								</Accordion.Content>
+							</Accordion>
+	  					</Segment>
+					</div>
+
+					<div ref='box7'>
+
+						<Segment className='landing-bottom' inverted>
+
+							<div className='landing-stats'>
+
+								<Statistic.Group items={items} />
+
+							</div>
+
+						</Segment>
+					</div>
+
+					<div ref='box8'>
+					<Segment className='bottom-navigation' inverted>
 
 						<Grid stackable divided='vertically'>
-							<Grid.Row columns={2}>
+							<Grid.Row columns={4}>
 								<Grid.Column>
-									<Image src='/paragraph.png' />
+									<Header inverted color="grey" as='h3' attached='top'>Meta</Header>
+									<List>
+										<List.Item icon='users' content='Semantic UI' />
+										<List.Item icon='marker' content='New York, NY' />
+										<List.Item icon='mail' content={<a href='mailto:jack@semantic-ui.com'>jack@semantic-ui.com</a>} />
+										<List.Item icon='linkify' content={<a href='http://www.semantic-ui.com'>semantic-ui.com</a>} />
+									</List>
 								</Grid.Column>
 								<Grid.Column>
-									<Image src='/paragraph.png' />
-								</Grid.Column>
-							</Grid.Row>
-
-							<Grid.Row columns={3}>
-								<Grid.Column>
-									<Image src='/paragraph.png' />
-								</Grid.Column>
-								<Grid.Column>
-									<Image src='/paragraph.png' />
+									<Header inverted color="grey" as='h3' attached='top'>Legal</Header>
+									<List>
+										<List.Item icon='users' content='Semantic UI' />
+										<List.Item icon='marker' content='New York, NY' />
+										<List.Item icon='mail' content={<a href='mailto:jack@semantic-ui.com'>jack@semantic-ui.com</a>} />
+										<List.Item icon='linkify' content={<a href='http://www.semantic-ui.com'>semantic-ui.com</a>} />
+									</List>
 								</Grid.Column>
 								<Grid.Column>
-									<Image src='/paragraph.png' />
+									<Header inverted color="grey" as='h3' attached='top'>News</Header>
+									<List>
+										<List.Item icon='users' content='Semantic UI' />
+										<List.Item icon='marker' content='New York, NY' />
+										<List.Item icon='mail' content={<a href='mailto:jack@semantic-ui.com'>jack@semantic-ui.com</a>} />
+										<List.Item icon='linkify' content={<a href='http://www.semantic-ui.com'>semantic-ui.com</a>} />
+									</List>
+								</Grid.Column>
+								<Grid.Column>
+									<Header inverted color="grey" as='h3' attached='top'>Connect</Header>
+									<List>
+										<List.Item icon='linkedin' content={<a href='https://www.linkedin.com/company-beta/13251727/'>LinkedIn</a>} />
+										<List.Item icon='facebook' content={<a href='https://facebook.com/2030AG'>Facebook</a>} />
+										<List.Item icon='twitter' content={<a href='https://twitter.com/2030AG'>Twitter</a>} />
+										<List.Item icon='github' content={<a href='https://github.com'>GitHub</a>} />
+									</List>
 								</Grid.Column>
 							</Grid.Row>
 						</Grid>
 
 					</Segment>
-
-			        <Divider horizontal inverted>Partners</Divider>
-
-					<Segment inverted>
-						<Header as='h2' icon textAlign='center'>
-							<Icon name='users' circular />
-							<Header.Content>
-								Friends
-							</Header.Content>
-						</Header>
-						<Image centered size='large' src='/centered-paragraph.png' />
-					</Segment>
-
-			        <Divider horizontal inverted>Core Team</Divider>
-
-					<Segment inverted>
-
-						<Card.Group itemsPerRow={4}>
-							<Card>
-								<Card.Content>
-									<Card.Header>Matthew Harris</Card.Header>
-									<Card.Meta>Co-Worker</Card.Meta>
-									<Card.Description>Matthew is a pianist living in Nashville.</Card.Description>
-								</Card.Content>
-							</Card>
-
-							<Card>
-								<Card.Content>
-									<Card.Header content='Jake Smith' />
-									<Card.Meta content='Musicians' />
-									<Card.Description content='Jake is a drummer living in New York.' />
-								</Card.Content>
-							</Card>
-
-							<Card>
-								<Card.Content
-									header='Elliot Baker'
-									meta='Friend'
-									description='Elliot is a music producer living in Chicago.'
-									/>
-							</Card>
-
-							<Card
-								header='Jenny Hess'
-								meta='Friend'
-								description='Jenny is a student studying Media Management at the New School'
-								/>
-							<Card>
-								<Card.Content>
-									<Card.Header>Matthew Harris</Card.Header>
-									<Card.Meta>Co-Worker</Card.Meta>
-									<Card.Description>Matthew is a pianist living in Nashville.</Card.Description>
-								</Card.Content>
-							</Card>
-
-							<Card>
-								<Card.Content>
-									<Card.Header content='Jake Smith' />
-									<Card.Meta content='Musicians' />
-									<Card.Description content='Jake is a drummer living in New York.' />
-								</Card.Content>
-							</Card>
-
-							<Card>
-								<Card.Content
-									header='Elliot Baker'
-									meta='Friend'
-									description='Elliot is a music producer living in Chicago.'
-									/>
-							</Card>
-
-							<Card
-								header='Jenny Hess'
-								meta='Friend'
-								description='Jenny is a student studying Media Management at the New School'
-								/>
-						</Card.Group>
-
-					</Segment>
-
-			        <Divider horizontal inverted>Ambassadors & Associates</Divider>
-
-					<Segment inverted>
-
-						<Card.Group itemsPerRow={4}>
-							<Card>
-								<Card.Content>
-									<Card.Header>Matthew Harris</Card.Header>
-									<Card.Meta>Co-Worker</Card.Meta>
-									<Card.Description>Matthew is a pianist living in Nashville.</Card.Description>
-								</Card.Content>
-							</Card>
-
-							<Card>
-								<Card.Content>
-									<Card.Header content='Jake Smith' />
-									<Card.Meta content='Musicians' />
-									<Card.Description content='Jake is a drummer living in New York.' />
-								</Card.Content>
-							</Card>
-
-							<Card>
-								<Card.Content
-									header='Elliot Baker'
-									meta='Friend'
-									description='Elliot is a music producer living in Chicago.'
-									/>
-							</Card>
-
-							<Card
-								header='Jenny Hess'
-								meta='Friend'
-								description='Jenny is a student studying Media Management at the New School'
-								/>
-							<Card>
-								<Card.Content>
-									<Card.Header>Matthew Harris</Card.Header>
-									<Card.Meta>Co-Worker</Card.Meta>
-									<Card.Description>Matthew is a pianist living in Nashville.</Card.Description>
-								</Card.Content>
-							</Card>
-
-							<Card>
-								<Card.Content>
-									<Card.Header content='Jake Smith' />
-									<Card.Meta content='Musicians' />
-									<Card.Description content='Jake is a drummer living in New York.' />
-								</Card.Content>
-							</Card>
-
-							<Card>
-								<Card.Content
-									header='Elliot Baker'
-									meta='Friend'
-									description='Elliot is a music producer living in Chicago.'
-									/>
-							</Card>
-
-							<Card
-								header='Jenny Hess'
-								meta='Friend'
-								description='Jenny is a student studying Media Management at the New School'
-								/>
-						</Card.Group>
-
-					</Segment>
-
-			        <Divider horizontal inverted>Frequently asked Questions</Divider>
-
-					<Segment>
-						<Accordion>
-							<Accordion.Title>
-								<Icon name='dropdown' />
-								What is a dog?
-							</Accordion.Title>
-							<Accordion.Content>
-								<p>
-								A dog is a type of domesticated animal. Known for its loyalty and faithfulness,
-								{' '}it can be found as a welcome guest in many households across the world.
-								</p>
-							</Accordion.Content>
-							<Accordion.Title>
-								<Icon name='dropdown' />
-								What kinds of dogs are there?
-							</Accordion.Title>
-							<Accordion.Content>
-								<p>
-								There are many breeds of dogs. Each breed varies in size and temperament.
-								{' '}Owners often select a breed of dog that they find to be compatible
-								with their own lifestyle and desires from a companion.
-								</p>
-							</Accordion.Content>
-							<Accordion.Title>
-								<Icon name='dropdown' />
-								How do you acquire a dog?
-							</Accordion.Title>
-							<Accordion.Content>
-								<p>
-								Three common ways for a prospective owner to acquire a dog is from pet shops,
-								{' '}private owners, or shelters.
-								</p>
-								<p> A pet shop may be the most convenient way to buy a dog.
-								{' '}Buying a dog from a private owner allows you to assess the pedigree and
-								{' '}upbringing of your dog before choosing to take it home. Lastly, finding your dog
-								{' '}from a shelter, helps give a good home to a dog who may not find one so readily.
-								</p>
-							</Accordion.Content>
-						</Accordion>
-  					</Segment>
-
-
-					<Segment className='landing-bottom' inverted>
-							<Statistic.Group items={items} />
-
-					</Segment>
+					</div>
 
 				</Container>
 
@@ -367,7 +496,8 @@ App.propTypes = {
 	stageHeight: PropTypes.number,
 	stageWidth: PropTypes.number,
 	notification: PropTypes.object,
-	session: PropTypes.string
+	session: PropTypes.string,
+	statDisplay: PropTypes.array
 }
 
 App.defaultProps = {
@@ -375,7 +505,9 @@ App.defaultProps = {
 	stageWidth: 0,
 	activeNavItem:'home',
 	session:'-1',
-	notification: null
+	statDisplay: [ 0,0,0,0,0 ],
+	notification:
+	null
 	// {
 	// 	color: 'green',
 	// 	icon: 'circle notched',
