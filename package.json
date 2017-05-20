@@ -1,0 +1,24 @@
+{
+  "name": "launch-page",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-three-renderer": "^3.1.0",
+    "react-zest": "^0.2.3",
+    "semantic-ui-css": "^2.2.10",
+    "semantic-ui-react": "^0.68.3",
+    "stats.js": "^0.17.0",
+    "three": "^0.85.2"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
