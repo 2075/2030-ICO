@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 const _ss = 1000;
 const _mm = _ss * 60;
@@ -17,6 +18,7 @@ class Counter extends Component {
 				hh:'',
 				mm:'',
 				ss:'',
+				ms:'',
 				complete:''
 			},
 			note: ''
@@ -39,12 +41,13 @@ class Counter extends Component {
 		let dd = ('00' + Math.floor(distance / _dd) ).slice(-2),
 			hh = ('00' + Math.floor((distance % _dd) / _hh)).slice(-2),
 			mm = ('00' + Math.floor((distance % _hh) / _mm)).slice(-2),
-			ss = ('00' + Math.floor((distance % _mm) / _ss)).slice(-2)
+			ss = ('00' + Math.floor((distance % _mm) / _ss)).slice(-2),
+			ms = ('000' + Math.floor(Math.random(999)*1000)).slice(-3)
 
-		let complete = 'time remaining: ' + dd + ':' + hh + ':' + mm + ':' + ss
+		let complete = 'time remaining: ' + dd + ':' + hh + ':' + mm + ':' + ss + ':' + ms
 
 		this.setState({ remaining: {
-			dd: dd, hh: hh, mm: mm, ss: ss, complete: complete
+			dd: dd, hh: hh, mm: mm, ss: ss, ms: ms, complete: complete
 		}})
 
 	}
@@ -65,7 +68,7 @@ class Counter extends Component {
 
 		this.timerID = setInterval(
 			() => this.tick(),
-			1000
+			100
 		);
 	}
 
@@ -75,14 +78,23 @@ class Counter extends Component {
 
 	render() {
 		return (
-			<div className='countdown'>
-				<div className='countdown dd'>{this.state.remaining.dd}</div>::
-				<div className='countdown hh'>{this.state.remaining.hh}</div>::
-				<div className='countdown mm'>{this.state.remaining.mm}</div>::
-				<div className='countdown ss'>{this.state.remaining.ss}</div>
+			<div className='countdown-wrapper'>
+				<div className='countdown'>
+					<div className='countdown dd'>{this.state.remaining.dd}'</div>
+					<div className='countdown hh'>{this.state.remaining.hh}'</div>
+					<div className='countdown mm'>{this.state.remaining.mm}'</div>
+					<div className='countdown ss'>{this.state.remaining.ss}</div>
+					{ this.props.showMS && <div className='countdown ss'>'{this.state.remaining.ms}</div> }
+				</div>
 			</div>
 		);
 	}
+}
+Counter.propTypes = {
+	showMS: PropTypes.bool
+}
+
+Counter.defaultProps = {
 }
 
 export default Counter;
