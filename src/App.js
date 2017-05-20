@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import sr from './components/ScrollReveal'
 import Counter from './components/Counter'
-import SignUpForm from './components/SignUpForm'
+// import SignUpForm from './components/SignUpForm'
 
 // semantic ui components
 import {
@@ -116,6 +116,9 @@ class App extends Component {
 						/>
 				</div>
 
+				<div className='landing-bottom'>
+				</div>
+
 				<Container>
 
 					<Menu pointing inverted secondary>
@@ -146,19 +149,26 @@ class App extends Component {
 
 					<Segment ref='box0' className='landing-top' inverted>
 
-						<Image src='/img/main-logo.png' size='large' centered />
+						<Image src="/svg/pillar.svg" alt="PLR ICO" size='large' centered />
 
-						<Image src='/img/header-1.png' centered />
+						<Segment textAlign='center' inverted>
+							<div  className='matrixfont introtext'>
+								Pillar is an open-source bridge between the world of centralized
+								electronic money and the decentralized world of cryptofinance.
+							</div>
+						</Segment>
 
-						<Image src='/img/timer.png' centered />
-
-						<Segment inverted>
+						<Segment textAlign='center' inverted>
 							<Counter />
 						</Segment>
 
-						<SignUpForm />
-
-						<Image src='/img/header-2.png' centered />
+						<Segment textAlign='center' inverted>
+							<div  className='matrixfont introtext'>
+								Pillar and its associated utility token will reduce the risks
+								of data concentration and accelerate innovation in banking,
+								ecommerce, payments, and more.
+							</div>
+						</Segment>
 
 					</Segment>
 
@@ -433,7 +443,7 @@ class App extends Component {
 
 					<div ref='box7'>
 
-						<Segment className='landing-bottom' inverted>
+						<Segment inverted>
 
 							<div className='landing-stats'>
 
