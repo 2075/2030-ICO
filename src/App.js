@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import sr from './components/ScrollReveal'
+import Counter from './components/Counter'
+import SignUpForm from './components/SignUpForm'
 
 // semantic ui components
 import {
@@ -149,6 +151,12 @@ class App extends Component {
 						<Image src='/img/header-1.png' centered />
 
 						<Image src='/img/timer.png' centered />
+
+						<Segment inverted>
+							<Counter />
+						</Segment>
+
+						<SignUpForm />
 
 						<Image src='/img/header-2.png' centered />
 

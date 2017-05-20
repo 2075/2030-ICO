@@ -1,4 +1,5 @@
-@import url('//fonts.googleapis.com/css?family=Raleway');
+@import url('//fonts.googleapis.com/css?family=Lato:100');
+@import url('//fonts.googleapis.com/css?family=Orbitron&effect=neon');
 
 html, body {
   background: #000000 url('/img/grid.png') repeat !important;
@@ -48,4 +49,40 @@ a:hover {
 
 .ui {
 	border-radius: 0 !important;
+}
+
+.logo {
+		text-shadow:
+			0 0 5px #fff,
+			0 0 10px #ace,
+			0 0 30px #1af,
+			0 0 40px #19e,
+			0 0 50px #08c,
+			0 0 60px #038;
+}
+
+.countdown {
+
+	font-family: 'Orbitron', sans-serif;
+	font-size: 2em;
+	color: #29ABE2;
+	text-shadow:
+			0 0 5px #fff,
+			0 0 10px #ace,
+			0 0 30px #1af,
+			0 0 40px #19e,
+			0 0 50px #08c,
+			0 0 60px #038;
+
+	height: auto;
+
+	display: flex;
+	flex-wrap: none;
+	align-items: center;
+}
+
+.countdown .dd,
+.countdown .hh,
+.countdown .mm,
+.countdown .ss {
 }
