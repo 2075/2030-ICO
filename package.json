@@ -7,6 +7,7 @@
     "react-dom": "^15.5.4",
     "react-three-renderer": "^3.1.0",
     "react-zest": "^0.2.3",
+    "scrollreveal": "^3.3.5",
     "semantic-ui-css": "^2.2.10",
     "semantic-ui-react": "^0.68.3",
     "stats.js": "^0.17.0",
