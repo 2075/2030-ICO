@@ -17,19 +17,21 @@
   --responsive: calc((var(--min-size) * 1px) + var(--diff) * ((100vw - 420px) / (1200 - 420))); /* Ranges from 421px to 1199px */
 }
 
-html, body {
-  background: #000000 url('/img/grid.png') repeat !important;
-  background-size: 25% !important;
-  background-attachment: scroll;
-
+body {
+	background-color: #000000;
 	color: #eeeeee;
 	font-weight: 200;
+}
+
+#root {
+  background: url('/img/grid.png') repeat !important;
+  background-size: 25% !important;
+  background-attachment: scroll;
 }
 
 a {
 	color: #ffffff !important;
 }
-
 a:hover {
 	text-decoration: underline;
 }
@@ -37,20 +39,24 @@ a:hover {
 .inverted {
 	background: none !important;
 }
-
 .inverted .label {
 	color: #fff !important;
 }
 
-.landing-bottom {
-  background: url('/img/horizon.jpg') cover !important;
-  background-position: center bottom;
-  height: auto;
-  z-index: -1;
+.landing-top {
+  background: none !important;
+	z-index: -2;
 }
-
+.landing-bottom {
+  background-image: url('/img/atmosphere-at-sunrise.png') !important;
+	background-repeat: no-repeat;
+  background-size: 100% !important;
+  background-position: center bottom;
+  z-index: -5;
+}
 .bottom-navigation {
-	background: #000000 !important;
+	background: #111111 !important;
+  z-index: -2;
 }
 
 .RenderPolygons {
@@ -61,12 +67,29 @@ a:hover {
 	bottom: 0;
 	min-height: 100%;
 	min-width: 100%;
-	z-index: -5;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
 }
 
 .ui {
+	background: none !important;
 	border-radius: 0 !important;
+	z-index: 5;
 }
+
+.ui .accordion,
+.ui.accordion .title,
+.ui.accordion .title:not(.ui),
+.ui .accordion .content,
+.ui .segment {
+	background: none;
+	color: #fff;
+}
+.ui .accordion .content {
+	border-bottom: 1px dotted #29ABE2;
+}
+
 .ui.secondary.pointing.menu .item {
 	font-weight: 100;
 }
@@ -117,17 +140,14 @@ a:hover {
   text-align: left;
 }
 
-.glow {
+.spaceglow {
 	color: #29ABE2;
-	text-shadow:
-			0 0 1px #fff,
-/*
-			0 0 10px #ace,
-			0 0 30px #1af,
-			0 0 40px #19e,
-*/
-			0 0 50px #08c,
-			0 0 60px #038;
+	-webkit-filter: drop-shadow(
+			0 0 60px #038
+	);
+	filter: drop-shadow(
+			0 0 60px #038
+	);
 }
 
 .countdown-wrapper {
@@ -154,16 +174,16 @@ a:hover {
   --max-size: 60;
   --min-size: 20;
   font-size: var(--responsive);
-	color: #29ABE2;
+	color: #F15A24;
 	text-shadow:
-			0 0 1px #fff,
+			0 0 1px #F15A24,
 /*
 			0 0 10px #ace,
 			0 0 30px #1af,
 			0 0 40px #19e,
 */
-			0 0 50px #08c,
-			0 0 60px #038;
+			0 0 50px #C1272D,
+			0 0 60px #300A0B;
 }
 
 .countdown .dd,

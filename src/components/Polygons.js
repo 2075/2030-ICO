@@ -34,7 +34,7 @@ class RenderPolygons extends ExampleBase {
 
 	componentDidMount() {
 
-		document.addEventListener('keydown', this._onKeyDown, false);
+		// document.addEventListener('keydown', this._onKeyDown, false);
 
 		// const controls = new TrackballControls(
 		// 	this.refs.mainCamera,
@@ -65,26 +65,40 @@ class RenderPolygons extends ExampleBase {
 
 	componentWillUnmount() {
 
-		document.removeEventListener('keydown', this._onKeyDown, false);
+		// document.removeEventListener('keydown', this._onKeyDown, false);
 
-		this.controls.dispose();
-		delete this.controls;
+		// this.controls.dispose();
+		// delete this.controls;
 
 	}
 
-	_onKeyDown = (event) => {
-		switch (event.keyCode) {
-			default:
-				break;
+	componentWillReceiveProps(nextProps) {
 
-			case 80: // P
-				this.setState({
-					activeCameraName: perspectiveCameraName,
-				});
+		// if (
+		// 	this.props.width!==nextProps.width ||
+		// 	this.props.height!==nextProps.height
+		// ) {
+		// 	console.log(
+		// 		nextProps.width,
+		// 		nextProps.height
+		// 	);
+		// }
 
-				break;
-		}
-	};
+	}
+
+	// _onKeyDown = (event) => {
+	// 	switch (event.keyCode) {
+	// 		default:
+	// 			break;
+
+	// 		case 80: // P
+	// 			this.setState({
+	// 				activeCameraName: perspectiveCameraName,
+	// 			});
+
+	// 			break;
+	// 	}
+	// };
 
 	_onAnimate = () => {
 		// this.controls.update();
@@ -102,11 +116,11 @@ class RenderPolygons extends ExampleBase {
 		});
 	};
 
-	_pause = () => {
-		this.setState({
-			paused: !this.state.paused,
-		});
-	};
+	// _pause = () => {
+	// 	this.setState({
+	// 		paused: !this.state.paused,
+	// 	});
+	// };
 
 	_frame = () => {
 		this.setState({

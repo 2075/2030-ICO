@@ -79,6 +79,7 @@ class Counter extends Component {
 	render() {
 		return (
 			<div className='countdown-wrapper'>
+				{ this.props.msgSmall && <div className='msg-mall'>{this.props.msgSmall}</div>}
 				<div className='countdown'>
 					<div className='countdown dd'>{this.state.remaining.dd}'</div>
 					<div className='countdown hh'>{this.state.remaining.hh}'</div>
@@ -91,7 +92,8 @@ class Counter extends Component {
 	}
 }
 Counter.propTypes = {
-	showMS: PropTypes.bool
+	showMS: PropTypes.bool,
+	msgSmall: PropTypes.string
 }
 
 Counter.defaultProps = {

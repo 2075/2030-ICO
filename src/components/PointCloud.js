@@ -28,7 +28,7 @@ class PointCloud extends Component {
 			<points>
 				<geometry vertices={this.pointCloudVertices}/>
 				<pointsMaterial
-					color={0x888888}
+					color={0xaaeeff}
 					/>
 			</points>
 		);
