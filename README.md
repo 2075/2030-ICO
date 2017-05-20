@@ -4,7 +4,11 @@ Quickly assembled Mockup page. Needs to be stripped down a bit for production, c
 
 ## Technology
 
-This is based on React Redux SemanticUI and yarn.
+This is based on:
+- React
+- Redux
+- SemanticUI
+- yarn
 
 All views and components are contained in /src.
 
@@ -17,8 +21,10 @@ yarn install
 ```
 
 2. Run a local dev server
-```npm run start```
-The page will reload upon changes inside src.
+```
+npm run start
+```
+The page will reload upon changes inside ```/src```.
 You will find the page at localhost:3000
 
 3. For a production build
@@ -27,6 +33,5 @@ yarn run build
 serve -s build
 ```
 You will find the page at localhost:5000
-
 
 have phun.
