@@ -27,13 +27,23 @@ import RenderPolygons from './components/Polygons'
 
 // content for the bottom stats display
 //
+// ICO DATE: JUNE 27
+// TIME REMAINING: days, hours, minutes
+// FUNDRAISING GOAL: 10,000,000 CHF
+// FUNDED: $X
+// NUMBER OF DONATIONS: X
+// AVERAGE PER DONATION: $X
+// STRETCH GOAL: 2 MILLION CHF (SPECIAL PROJECT)
+
 const items = [
-	{ color: 'blue', label: 'Downloads', value: '3,200' },
-	{ color: 'violet', label: 'Likes', value: '10,000' },
-	{ color: 'red', label: 'Faves', value: '22' },
-	{ color: 'orange', label: 'Views', value: '31,200' },
+	{ color: 'blue', label: 'ICO Date', value: 'JUNE 27' },
+	{ color: 'violet', label: 'Fundraising Goal', value: '10,000,000 CHF' },
+	{ color: 'red', label: 'Funded', value: '0' },
+	{ color: 'orange', label: 'Donations', value: '25,452 CHF' },
+	{ color: 'orange', label: 'Average per Donations', value: '500 CHF' },
 	{ color: 'yellow', label: 'Members', value: '22' },
 ]
+
 
 class App extends Component {
 
@@ -130,10 +140,15 @@ class App extends Component {
 
 					<Container>
 
-						<Menu pointing inverted secondary>
+						<Menu pointing secondary>
 							<Menu.Item name='home' active={activeNavItem === 'home'} onClick={this.handleItemClick} />
-							<Menu.Item name='messages' active={activeNavItem === 'messages'} onClick={this.handleItemClick} />
-							<Menu.Item name='friends' active={activeNavItem === 'friends'} onClick={this.handleItemClick} />
+							<Menu.Item name='How To Buy' active={activeNavItem === 'how-to-buy'} onClick={this.handleItemClick} />
+							<Menu.Item name='Prospectus' active={activeNavItem === 'prospectus'} onClick={this.handleItemClick} />
+							<Menu.Item name='Whitepaper' active={activeNavItem === 'whitepaper'} onClick={this.handleItemClick} />
+							<Menu.Item name='Press' active={activeNavItem === 'press'} onClick={this.handleItemClick} />
+							<Menu.Item name='FAQ' active={activeNavItem === 'faq'} onClick={this.handleItemClick} />
+							<Menu.Item name='About' active={activeNavItem === 'about'} onClick={this.handleItemClick} />
+
 							<Menu.Menu position='right'>
 								{
 									session &&
@@ -156,22 +171,22 @@ class App extends Component {
 							</Message>
 						}
 
-						<Segment ref='box0' inverted>
+						<Segment ref='box0'>
 
 							<Image className='spaceglow' src='/svg/pillar.svg' alt='PLR ICO' size='large' centered />
 
-							<Segment textAlign='center' inverted>
+							<Segment textAlign='center'>
 								<div  className='matrixfont introtext'>
 									Pillar is an open-source bridge between the world of centralized
 									electronic money and the decentralized world of cryptofinance.
 								</div>
 							</Segment>
 
-							<Segment textAlign='center' inverted>
+							<Segment textAlign='center'>
 								<Counter />
 							</Segment>
 
-							<Segment textAlign='center' inverted>
+							<Segment textAlign='center'>
 								<div  className='matrixfont introtext'>
 									Pillar and its associated utility token will reduce the risks
 									of data concentration and accelerate innovation in banking,
@@ -181,81 +196,89 @@ class App extends Component {
 
 						</Segment>
 
-						<div ref= 'box1'>
-							<Divider horizontal inverted>What we do</Divider>
+						{
+							// stats
+						}
+						<div>
+							<Segment>
+								<div className='landing-stats'>
+									<Statistic.Group items={items} />
+								</div>
+							</Segment>
+						</div>
 
-							<Segment inverted>
+						<div ref= 'box1'>
+							<Divider horizontal>What we do</Divider>
+
+							<Segment>
 
 								<Grid stackable divided='vertically'>
-									<Grid.Row columns={2}>
+									<Grid.Row columns={1}>
 										<Grid.Column>
-											<Image src='/img/paragraph.png' />
-										</Grid.Column>
-										<Grid.Column>
-											<Image src='/img/paragraph.png' />
-										</Grid.Column>
+											<Container text>
+											<p>	The Pillar system will connect today’s software to all blockchains using a set of APIs and a native token called the Pillar. Our mission is to help today’s cloud-based software transition toward the decentralized systems of the future.
+											</p>
+											</Container>
+    									</Grid.Column>
 									</Grid.Row>
-
-									<Grid.Row columns={3}>
-										<Grid.Column>
-											<Image src='/img/paragraph.png' />
-										</Grid.Column>
-										<Grid.Column>
-											<Image src='/img/paragraph.png' />
-										</Grid.Column>
-										<Grid.Column>
-											<Image src='/img/paragraph.png' />
-										</Grid.Column>
-									</Grid.Row>
+{
+									// <Grid.Row columns={3}>
+									// 	<Grid.Column>
+									// 		<Image src='/img/paragraph.png' />
+									// 	</Grid.Column>
+									// 	<Grid.Column>
+									// 		<Image src='/img/paragraph.png' />
+									// 	</Grid.Column>
+									// 	<Grid.Column>
+									// 		<Image src='/img/paragraph.png' />
+									// 	</Grid.Column>
+									// </Grid.Row>
+}
 								</Grid>
 
 							</Segment>
 						</div>
 
 						<div  ref='box2'>
-							<Divider horizontal inverted>Products + Roadmap</Divider>
-
-							<Segment inverted>
-
-								<Grid celled >
-									<Grid.Row columns={4}>
+							<Divider horizontal>Products + Roadmap</Divider>
+							<Segment>
+								<Grid stackable celled>
+									<Grid.Row columns={3}>
 										<Grid.Column>
-											<Image src='/img/paragraph.png' />
+											<Header size="medium">Exchange </Header>
+											<p>An exchange using the Pillar platform has all currencies and blockchains available and can translate from any currency to any other. Rather than reinventing this wheel, transactions are paid it in Pillars.</p>
 										</Grid.Column>
 										<Grid.Column>
-											<Image src='/img/paragraph.png' />
+											<Header size="medium">Retail</Header>
+											<p>Any ecommerce website can accept ANY crypto-token or cryptocurrency for their products, and they'll get back the currency of their choice. They can commit to the APIs but not be locked into any particular exchange.</p>
 										</Grid.Column>
 										<Grid.Column>
-											<Image src='/img/paragraph.png' />
-										</Grid.Column>
-										<Grid.Column>
-											<Image src='/img/paragraph.png' />
+											<Header size="medium">Payment Service Providers</Header> <p>Our system turns any credit or debit card into a token card that can pay or receive in any cryptocurrency.</p>
 										</Grid.Column>
 									</Grid.Row>
-									<Grid.Row columns={4}>
+									<Grid.Row columns={3}>
 										<Grid.Column>
-											<Image src='/img/paragraph.png' />
+											<Header size="medium">Internet of Things</Header>
+											<p>Many connected things will connect through blockchains and other decentralized ledgers. Using our APIs, any software will be able to interact with these sensors and devices.</p>
 										</Grid.Column>
 										<Grid.Column>
-											<Image src='/img/paragraph.png' />
+											<Header size="medium">Settlement</Header>
+											<p>Institutions can use our system to settle on any blockchain.</p>
 										</Grid.Column>
 										<Grid.Column>
-											<Image src='/img/paragraph.png' />
-										</Grid.Column>
-										<Grid.Column>
-											<Image src='/img/paragraph.png' />
+											<Header size="medium">CryptX Index token</Header>
+											<p>This is our commercial showcase project we plan to launch using the funding we get from the crowdsale. It will prime the pump for future adoption of the platform and its token.</p>
 										</Grid.Column>
 									</Grid.Row>
 								</Grid>
-
 							</Segment>
 						</div>
 
 
 						<div ref='box3'>
-					        <Divider horizontal inverted>Partners</Divider>
+					        <Divider horizontal>Partners</Divider>
 
-							<Segment inverted>
+							<Segment>
 								<Header as='h2' icon textAlign='center'>
 									<Icon name='users' circular />
 									<Header.Content>
@@ -267,9 +290,9 @@ class App extends Component {
 						</div>
 
 						<div ref='box4'>
-					        <Divider horizontal inverted>Core Team</Divider>
+					        <Divider horizontal>Core Team</Divider>
 
-							<Segment inverted>
+							<Segment>
 
 								<Card.Group itemsPerRow={4}>
 									<Card>
@@ -336,9 +359,9 @@ class App extends Component {
 						</div>
 
 						<div ref='box5'>
-					        <Divider horizontal inverted>Ambassadors & Associates</Divider>
+					        <Divider horizontal>Ambassadors & Associates</Divider>
 
-							<Segment inverted>
+							<Segment>
 
 								<Card.Group stackable itemsPerRow={4}>
 									<Card>
@@ -406,7 +429,7 @@ class App extends Component {
 						</div>
 
 						<div ref='box6'>
-					        <Divider horizontal inverted>Frequently asked Questions</Divider>
+					        <Divider horizontal>Frequently asked Questions</Divider>
 
 							<Segment>
 								<Accordion>
@@ -450,22 +473,23 @@ class App extends Component {
 		  					</Segment>
 						</div>
 
-						<div ref='box7'>
-							<Segment inverted>
-								<div className='landing-stats'>
-									<Statistic.Group items={items} />
-								</div>
-							</Segment>
-						</div>
-
+{
+						// <div ref='box7'>
+						// 	<Segment>
+						// 		<div className='landing-stats'>
+						// 			<Statistic.Group items={items} />
+						// 		</div>
+						// 	</Segment>
+						// </div>
+}
 
 						<div className='bottom-navigation' ref='box8'>
-						<Segment inverted>
+						<Segment>
 
 							<Grid stackable divided='vertically'>
 								<Grid.Row columns={4}>
 									<Grid.Column>
-										<Header inverted color="grey" as='h3' attached='top'>Meta</Header>
+										<Header color="grey" as='h3' attached='top'>Meta</Header>
 										<List>
 											<List.Item icon='users' content='Semantic UI' />
 											<List.Item icon='marker' content='New York, NY' />
@@ -474,7 +498,7 @@ class App extends Component {
 										</List>
 									</Grid.Column>
 									<Grid.Column>
-										<Header inverted color="grey" as='h3' attached='top'>Legal</Header>
+										<Header color="grey" as='h3' attached='top'>Legal</Header>
 										<List>
 											<List.Item icon='users' content='Semantic UI' />
 											<List.Item icon='marker' content='New York, NY' />
@@ -483,7 +507,7 @@ class App extends Component {
 										</List>
 									</Grid.Column>
 									<Grid.Column>
-										<Header inverted color="grey" as='h3' attached='top'>News</Header>
+										<Header color="grey" as='h3' attached='top'>News</Header>
 										<List>
 											<List.Item icon='users' content='Semantic UI' />
 											<List.Item icon='marker' content='New York, NY' />
@@ -492,7 +516,7 @@ class App extends Component {
 										</List>
 									</Grid.Column>
 									<Grid.Column>
-										<Header inverted color="grey" as='h3' attached='top'>Connect</Header>
+										<Header color="grey" as='h3' attached='top'>Connect</Header>
 										<List>
 											<List.Item icon='linkedin' content={<a href='https://www.linkedin.com/company-beta/13251727/'>LinkedIn</a>} />
 											<List.Item icon='facebook' content={<a href='https://facebook.com/2030AG'>Facebook</a>} />

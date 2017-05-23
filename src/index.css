@@ -18,29 +18,26 @@
 }
 
 body {
-	background-color: #000000;
-	color: #eeeeee;
+	background-color: #ffffff;
+	color: #111111;
 	font-weight: 200;
 }
-
+p {
+	font-size: 2em;
+}
 #root {
-  background: url('/img/grid.png') repeat !important;
-  background-size: 25% !important;
-  background-attachment: scroll;
+	/*
+  	background: url('/img/grid.png') repeat !important;
+  	background-size: 10% !important;
+  	background-attachment: scroll;
+  */
 }
 
 a {
-	color: #ffffff !important;
+
 }
 a:hover {
 	text-decoration: underline;
-}
-
-.inverted {
-	background: none !important;
-}
-.inverted .label {
-	color: #fff !important;
 }
 
 .landing-top {
@@ -48,16 +45,16 @@ a:hover {
 	z-index: -2;
 }
 .landing-bottom {
+/**
 	background-image: url('/img/atmosphere-at-sunrise.png') !important;
 	background-repeat: no-repeat;
 	background-size: 100% !important;
 	background-position: center bottom;
 	z-index: -5;
-
+*/
 }
 .bottom-navigation {
 	background: #111111 !important;
-	opacity: .9;
   z-index: -2;
 }
 
@@ -80,16 +77,22 @@ a:hover {
 	z-index: 5;
 }
 
+.ui,
 .ui .accordion,
+.ui.attached.header,
 .ui.accordion .title,
 .ui.accordion .title:not(.ui),
 .ui .accordion .content,
 .ui .segment {
-	background: none;
-	color: #fff;
+		border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0;
+	  -webkit-filter: none;
+		filter: none;
 }
 .ui .accordion .content {
-	border-bottom: 1px dotted #29ABE2;
+	border-bottom: 1px dotted #F15A24;
 }
 
 .ui.secondary.pointing.menu .item {
@@ -101,21 +104,42 @@ a:hover {
 	text-transform: uppercase;
 	font-size: 3em;
 }
+
+.ui .statistics .statistic {
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 1em;
+}
 .ui .statistics .statistic > .value,
 .ui .statistics .statistic > .label {
 	font-weight: 100;
 	text-transform: uppercase;
+	text-align: left;
+}
+.ui .statistics .statistic > .label {
+	order: 1;
+}
+.ui .statistics .statistic > .value {
+	order: 2;
 }
 
-.ui .card {
-	border: none !important;
-}
+.ui .card,
 .ui.cards > .card {
-	background: none;
+	border: none;
+	border-bottom: 1px dotted #ccc;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border-radius: 0;
+	-webkit-filter: none;
+	filter: none;
+}
+.ui.cards > .card >.content > * {
+	font-size: 1em;
+	font-weight: 300 !important;
+	color: #F15A24 !important;
 }
 .ui.cards > .card >.content > * {
 	font-weight: 300 !important;
-	color: #0fc !important;
+	color: #F15A24 !important;
 }
 
 .logo {
@@ -132,10 +156,12 @@ a:hover {
 	font-family: 'HighSpeed', Fallback, sans-serif;
 }
 .introtext {
+	/*
 	margin-left:10%;
 	margin-right:10%;
-  --max-size: 25;
-  --min-size: 15;
+	*/
+  --max-size: 40;
+  --min-size: 20;
   font-size: var(--responsive);
   line-height: 1.2;
   word-wrap: none;
@@ -143,7 +169,7 @@ a:hover {
 }
 
 .spaceglow {
-	color: #29ABE2;
+	color: #F15A24;
 	-webkit-filter: drop-shadow(
 			0 0 60px #038
 	);
@@ -153,14 +179,14 @@ a:hover {
 }
 
 .countdown-wrapper {
+	/*
 	margin-left:10%;
 	margin-right:10%;
-	border-top: 1px dotted #29ABE2;
-	border-bottom: 1px dotted #29ABE2;
+	*/
 }
 
 .countdown {
-	margin-top: .5em;
+  margin-top: .5em;
 	margin-bottom: .5em;
 	height: auto;
 	display: flex;
@@ -171,21 +197,12 @@ a:hover {
 	justify-content: center;
 	/*width: 100%;*/
 	/*font-family: 'Orbitron', sans-serif;*/
-	font-family: 'HighSpeed', Fallback, sans-serif;
-	/*font-size: 2.5em;*/
-  --max-size: 60;
-  --min-size: 20;
+	/*font-family: 'HighSpeed', Fallback, sans-serif;*/
+	font-family: 'Lato', Fallback, sans-serif;
+  --max-size: 100;
+  --min-size: 40;
   font-size: var(--responsive);
 	color: #F15A24;
-	text-shadow:
-			0 0 1px #F15A24,
-/*
-			0 0 10px #ace,
-			0 0 30px #1af,
-			0 0 40px #19e,
-*/
-			0 0 50px #C1272D,
-			0 0 60px #300A0B;
 }
 
 .countdown .dd,
