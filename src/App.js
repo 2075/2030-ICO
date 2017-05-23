@@ -79,7 +79,7 @@ class App extends Component {
 		sr.reveal( this.refs.box5, sr_config )
 		sr.reveal( this.refs.box6, sr_config )
 		sr.reveal( this.refs.box7, sr_config )
-		sr.reveal( this.refs.box8, sr_config )
+		sr.reveal( this.refs.box8, sr_head )
 	}
 
 	componentWillUnmount() {

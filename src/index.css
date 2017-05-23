@@ -48,14 +48,16 @@ a:hover {
 	z-index: -2;
 }
 .landing-bottom {
-  background-image: url('/img/atmosphere-at-sunrise.png') !important;
+	background-image: url('/img/atmosphere-at-sunrise.png') !important;
 	background-repeat: no-repeat;
-  background-size: 100% !important;
-  background-position: center bottom;
-  z-index: -5;
+	background-size: 100% !important;
+	background-position: center bottom;
+	z-index: -5;
+
 }
 .bottom-navigation {
 	background: #111111 !important;
+	opacity: .9;
   z-index: -2;
 }
 
