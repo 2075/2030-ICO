@@ -5,6 +5,8 @@ import sr from './components/ScrollReveal'
 import Counter from './components/Counter'
 // import SignUpForm from './components/SignUpForm'
 
+import VideoPlayer from './components/VideoPlayer'
+
 // semantic ui components
 import {
 	Menu,
@@ -171,12 +173,14 @@ class App extends Component {
 							</Message>
 						}
 
+						<VideoPlayer />
+
 						<Segment ref='box0'>
 
 							<Image className='spaceglow' src='/svg/pillar.svg' alt='PLR ICO' size='large' centered />
 
 							<Segment textAlign='center'>
-								<div  className='matrixfont introtext'>
+								<div  className='introfont introtext'>
 									Pillar is an open-source bridge between the world of centralized
 									electronic money and the decentralized world of cryptofinance.
 								</div>

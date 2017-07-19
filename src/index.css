@@ -155,6 +155,12 @@ a:hover {
 .matrixfont {
 	font-family: 'HighSpeed', Fallback, sans-serif;
 }
+.introfont {
+	font-family: 'Lato', Fallback, sans-serif;
+	text-align: justify;
+	text-transform: uppercase;
+}
+
 .introtext {
 	/*
 	margin-left:10%;
@@ -202,6 +208,7 @@ a:hover {
   --max-size: 100;
   --min-size: 40;
   font-size: var(--responsive);
+  font-weight: 200;
 	color: #F15A24;
 }
 
