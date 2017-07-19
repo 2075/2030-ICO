@@ -11,7 +11,7 @@ class Counter extends Component {
 	constructor(props, context) {
 		super(props, context);
 		this.state = {
-			endDate: new Date('07/01/2017 12:00 AM'),
+			endDate: new Date('06/27/2017 12:00 AM'),
 			date: new Date(),
 			remaining: {
 				dd:'',
